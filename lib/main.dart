@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './Counter.dart';
 
 void main() => runApp(App());
 
@@ -54,6 +55,7 @@ class _HomePageState extends State<HomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.headline4,
             ),
+            Counter(),
           ],
         ),
       ),
