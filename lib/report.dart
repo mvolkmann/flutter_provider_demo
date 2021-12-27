@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'count_state.dart';
+import 'elevated_text_button.dart';
 import 'profile_state.dart';
 import 'widget_extensions.dart';
 
@@ -18,14 +19,15 @@ class Report extends StatelessWidget {
     return Column(
       children: [
         Row(
-          children: [
+          children: <Widget>[
             Text('${countState.count}'),
             Text(countState.winner ? 'You win!' : 'keep playing'),
-            ElevatedButton(
-                child: Text('Reset'),
-                onPressed: () {
-                  countState.reset();
-                }),
+            ElevatedTextButton(
+              onPressed: () {
+                countState.reset();
+              },
+              text: 'Reset',
+            ),
           ].hSpacing(10),
           mainAxisAlignment: MainAxisAlignment.center,
         ),

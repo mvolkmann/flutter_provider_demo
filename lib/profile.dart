@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'elevated_text_button.dart';
 import 'profile_state.dart';
 import 'widget_extensions.dart';
 
@@ -38,11 +39,11 @@ class Profile extends StatelessWidget {
               profileState.lastName = value;
             },
           ),
-          ElevatedButton(
+          ElevatedTextButton(
             onPressed: () {
               clear(profileState);
             },
-            child: Text('Clear'),
+            text: 'Clear',
           ),
         ].vSpacing(20),
       ).pad(20),
