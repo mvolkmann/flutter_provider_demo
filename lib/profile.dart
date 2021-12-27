@@ -6,6 +6,10 @@ import 'widget_extensions.dart';
 class Profile extends StatelessWidget {
   Profile({Key? key}) : super(key: key);
 
+  void clear(ProfileState profileState) {
+    profileState.clear();
+  }
+
   @override
   Widget build(BuildContext context) {
     var profileState = Provider.of<ProfileState>(context);
@@ -33,6 +37,12 @@ class Profile extends StatelessWidget {
             onChanged: (String value) {
               profileState.lastName = value;
             },
+          ),
+          ElevatedButton(
+            onPressed: () {
+              clear(profileState);
+            },
+            child: Text('Clear'),
           ),
         ].vSpacing(20),
       ).pad(20),

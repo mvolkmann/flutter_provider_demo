@@ -15,18 +15,22 @@ class Report extends StatelessWidget {
     var countState = Provider.of<CountState>(context);
     var profileState = Provider.of<ProfileState>(context);
 
-    return Row(
+    return Column(
       children: [
-        Text('${countState.count}'),
-        Text(countState.winner ? 'You win!' : 'keep playing'),
-        ElevatedButton(
-            child: Text('Reset'),
-            onPressed: () {
-              countState.reset();
-            }),
+        Row(
+          children: [
+            Text('${countState.count}'),
+            Text(countState.winner ? 'You win!' : 'keep playing'),
+            ElevatedButton(
+                child: Text('Reset'),
+                onPressed: () {
+                  countState.reset();
+                }),
+          ].hSpacing(10),
+          mainAxisAlignment: MainAxisAlignment.center,
+        ),
         Text('Hello, ${profileState.firstName}, ${profileState.lastName}')
-      ].hSpacing(10),
-      mainAxisAlignment: MainAxisAlignment.center,
+      ],
     );
 
     // The second is to use "Consumer".

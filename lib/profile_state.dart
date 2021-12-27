@@ -8,6 +8,11 @@ class ProfileState extends ChangeNotifier {
 
   String get lastName => _lastName;
 
+  void clear() {
+    _firstName = '';
+    _lastName = '';
+  }
+
   set firstName(String s) {
     _firstName = s;
     notifyListeners();
