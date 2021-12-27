@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import './CircleButton.dart';
+import 'widget_extensions.dart';
 
 class Counter extends StatefulWidget {
   const Counter({Key? key}) : super(key: key);
@@ -25,8 +26,7 @@ class _CounterState extends State<Counter> {
 
   @override
   Widget build(BuildContext context) {
-    return Row(children: [
-      Spacer(),
+    var children = <Widget>[
       CircleButton(
           color: Colors.red, onPressed: decrement, size: 30, text: '-'),
       Padding(
@@ -34,7 +34,11 @@ class _CounterState extends State<Counter> {
         child: Text(count.toString(), style: TextStyle(fontSize: 30)),
       ),
       CircleButton(onPressed: increment, size: 30, text: '+'),
-      Spacer(),
-    ]);
+    ].spacing(5);
+
+    return Row(
+      children: children,
+      mainAxisAlignment: MainAxisAlignment.center,
+    );
   }
 }
