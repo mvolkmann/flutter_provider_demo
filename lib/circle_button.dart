@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'widget_extensions.dart';
 
 class CircleButton extends StatelessWidget {
   final Color color;
@@ -16,23 +17,19 @@ class CircleButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      child: ElevatedButton(
-        style: ElevatedButton.styleFrom(shape: CircleBorder(), primary: color),
-        child: Container(
-          width: size,
-          height: size,
-          alignment: Alignment.center,
-          decoration: BoxDecoration(shape: BoxShape.circle),
-          child: Text(
-            text,
-            style: TextStyle(fontSize: 24),
-          ),
+    return ElevatedButton(
+      style: ElevatedButton.styleFrom(shape: CircleBorder(), primary: color),
+      child: Container(
+        width: size,
+        height: size,
+        alignment: Alignment.center,
+        decoration: BoxDecoration(shape: BoxShape.circle),
+        child: Text(
+          text,
+          style: TextStyle(fontSize: 24),
         ),
-        onPressed: onPressed,
       ),
-      height: size,
-      width: size,
-    );
+      onPressed: onPressed,
+    ).size(width: size, height: size);
   }
 }
