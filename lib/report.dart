@@ -7,7 +7,15 @@ class Report extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var countState = Provider.of<CountState>(context);
-    return Text('In report, count = ${countState.count}');
+    // There are two approaches for access provider state.
+
+    // The first is to use "Provider.of".
+    //var countState = Provider.of<CountState>(context);
+    //return Text('In report, count = ${countState.count}');
+
+    // The second is to use "Consumer".
+    return Consumer<CountState>(builder: (conext, data, child) {
+      return Text('In report now, count = ${data.count}');
+    });
   }
 }
