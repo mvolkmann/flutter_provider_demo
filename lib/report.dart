@@ -10,12 +10,28 @@ class Report extends StatelessWidget {
     // There are two approaches for access provider state.
 
     // The first is to use "Provider.of".
-    //var countState = Provider.of<CountState>(context);
-    //return Text('In report, count = ${countState.count}');
+    var countState = Provider.of<CountState>(context);
+    return Row(children: [
+      Text('Report: ${countState.count}'),
+      ElevatedButton(
+          child: Text('Reset'),
+          onPressed: () {
+            countState.reset();
+          }),
+    ]);
 
     // The second is to use "Consumer".
+    /*
     return Consumer<CountState>(builder: (conext, data, child) {
-      return Text('In report now, count = ${data.count}');
+      return Row(children: [
+        Text('Report: ${data.count}'),
+        ElevatedButton(
+            child: Text('Reset'),
+            onPressed: () {
+              data.reset();
+            }),
+      ]);
     });
+    */
   }
 }
