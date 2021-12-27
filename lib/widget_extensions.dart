@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-/*
-extension WidgetExtension<Widget> on Widget {
+extension WidgetExtension on Widget {
   /// Wraps a widget in a SizedBox with a given width and height.
   SizedBox size({required double width, required double height}) {
     Widget? child = this;
@@ -9,12 +8,10 @@ extension WidgetExtension<Widget> on Widget {
   }
 
   /// Wraps a widget in a Padding with a given size.
-  Padding pad({required double size}) {
-    Widget? child = this;
-    return Padding(child: child, padding: EdgeInsets.all(size));
+  Padding pad(double size) {
+    return Padding(child: this, padding: EdgeInsets.all(size));
   }
 }
-*/
 
 extension WidgetListExtension<Widget> on List<Widget> {
   /// Adds a SizedBox with a given width and no height
