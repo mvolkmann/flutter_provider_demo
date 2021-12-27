@@ -22,7 +22,7 @@ class Report extends StatelessWidget {
 
     // The second is to use "Consumer".
     /*
-    return Consumer<CountState>(builder: (conext, data, child) {
+    return Consumer<CountState>(builder: (context, data, child) {
       return Row(children: [
         Text('Report: ${data.count}'),
         ElevatedButton(
