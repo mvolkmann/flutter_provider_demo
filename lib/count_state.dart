@@ -6,7 +6,7 @@ class CountState extends ChangeNotifier {
 
   int get count => _count;
 
-  bool get winner => _count == 10;
+  bool get winner => _count >= 10;
 
   void decrement() {
     _count--;

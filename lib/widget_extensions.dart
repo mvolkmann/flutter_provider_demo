@@ -4,7 +4,14 @@ import 'package:flutter/material.dart';
 extension WidgetExtension<Widget> on Widget {
   /// Wraps a widget in a SizedBox with a given width and height.
   SizedBox size({required double width, required double height}) {
-    return SizedBox(child: this, height: height, width: width);
+    Widget? child = this;
+    return SizedBox(child: child, height: height, width: width);
+  }
+
+  /// Wraps a widget in a Padding with a given size.
+  Padding pad({required double size}) {
+    Widget? child = this;
+    return Padding(child: child, padding: EdgeInsets.all(size));
   }
 }
 */

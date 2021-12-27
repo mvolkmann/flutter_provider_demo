@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'count_state.dart';
 import 'counter.dart';
+import 'profile.dart';
+import 'profile_state.dart';
 import 'report.dart';
 
 void main() => runApp(App());
@@ -16,8 +18,12 @@ class App extends StatelessWidget {
       theme: ThemeData(primarySwatch: Colors.blue),
       darkTheme: ThemeData.dark(),
       themeMode: ThemeMode.system,
-      home: ChangeNotifierProvider(
-        create: (context) => CountState(),
+      // This demonstrates using multiple state providers.
+      home: MultiProvider(
+        providers: [
+          ChangeNotifierProvider<CountState>(create: (_) => CountState()),
+          ChangeNotifierProvider<ProfileState>(create: (_) => ProfileState()),
+        ],
         child: HomePage(title: 'Provider Demo'),
       ),
     );
@@ -41,6 +47,7 @@ class HomePage extends StatelessWidget {
           children: <Widget>[
             Counter(),
             Report(),
+            Profile(),
           ],
         ),
       ),

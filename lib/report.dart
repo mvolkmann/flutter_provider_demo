@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'count_state.dart';
+import 'profile_state.dart';
 import 'widget_extensions.dart';
 
 class Report extends StatelessWidget {
@@ -12,6 +13,8 @@ class Report extends StatelessWidget {
 
     // The first is to use "Provider.of".
     var countState = Provider.of<CountState>(context);
+    var profileState = Provider.of<ProfileState>(context);
+
     return Row(
       children: [
         Text('${countState.count}'),
@@ -21,6 +24,7 @@ class Report extends StatelessWidget {
             onPressed: () {
               countState.reset();
             }),
+        Text('Hello, ${profileState.firstName}, ${profileState.lastName}')
       ].hSpacing(10),
       mainAxisAlignment: MainAxisAlignment.center,
     );
