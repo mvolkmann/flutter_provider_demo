@@ -29,8 +29,8 @@ class _CounterState extends State<Counter> {
     var children = <Widget>[
       CircleButton(
           color: Colors.red, onPressed: decrement, size: 50, text: '-'),
-      Text(count.toString(), style: TextStyle(fontSize: 30)),
-      CircleButton(onPressed: increment, size: 40, text: '+'),
+      Text(count.toString(), style: TextStyle(fontSize: 50)),
+      CircleButton(onPressed: increment, size: 50, text: '+'),
     ].hSpacing(10);
 
     return Row(
